@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+         http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         id="WebApp_ID" version="2.5">
+
+    <servlet>
+        <servlet-name>EvaluatorServlet</servlet-name>
+        <servlet-class>io.github.badgateway12.servlet.EvaluatorServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ErrorServlet</servlet-name>
+        <servlet-class>io.github.badgateway12.servlet.ErrorServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>EvaluatorServlet</servlet-name>
+        <url-pattern>/evaluate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ErrorServlet</servlet-name>
+        <url-pattern>/error</url-pattern>
+    </servlet-mapping>
+
+    <listener>
+        <listener-class>io.github.badgateway12.contextListener.TemplateEngineContextListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>io.github.badgateway12.contextListener.EvaluatorServiceContextListener</listener-class>
+    </listener>
+
+</web-app>
